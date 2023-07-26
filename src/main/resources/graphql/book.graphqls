@@ -35,6 +35,7 @@ type Query {
     getAllBooks: [Book!]
     getAllAuthor: [Author!]
     getGenreBook(genre: String!): [Book]
+    generateReport(format : String!) : String!
 }
 
 type Mutation {
