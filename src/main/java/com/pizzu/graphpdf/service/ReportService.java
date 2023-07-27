@@ -30,7 +30,7 @@ public class ReportService {
 
         List<Book> bookList = repository.findAll();
 
-        File file = ResourceUtils.getFile("classpath:library.jrxml");
+        File file = ResourceUtils.getFile("classpath:LibraryGroupedBy.jrxml");
         JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(bookList);
 

@@ -62,6 +62,8 @@ public class BookResolver {
         //!authorRepository.findById(book.getAuthor().getId()).isPresent()
         if (book.getAuthor() != null && !authorRepository.findById(book.getAuthor().getId()).isPresent()) {
             authorRepository.save(book.getAuthor());
+        } else {
+            book.setAuthor(authorRepository.findById(book.getAuthor().getId()).get());
         }
 
         Book result = bookrepository.saveAndFlush(book);
